@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>Articles</h1>
+<div class="list-group">
+{%for article in all_articles%}
+    {%if article.id=='1'%}
+        <a href="/article/{{article.id}}" class="list-group-item list-group-item-action list-group-item-primary">{{article.title}}</a>
+    {%elif article.id=='2'%}
+        <a href="/article/{{article.id}}" class="list-group-item list-group-item-action list-group-item-danger">{{article.title}}</a>
+    {%else%}
+        <a href="/article/{{article.id}}" class="list-group-item list-group-item-action list-group-item-success">{{article.title}}</a>
+    {%endif%}
+{% endfor %}
+</div>
+
+{% endblock %}
